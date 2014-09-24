@@ -1,0 +1,189 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title ShGR
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    / Bootstrap core CSS
+    %link{:href => "assets/css/bootstrap.css", :rel => "stylesheet"}/
+    / Custom styles for this template
+    %link{:href => "assets/css/main.css", :rel => "stylesheet"}/
+    %link{:href => "assets/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://code.jquery.com/jquery-1.10.2.min.js"}
+    %script{:src => "assets/js/chart.js"}
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  %body
+    / Fixed navbar
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"}
+            %i.fa.fa-bolt
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.active
+              %a{:href => "#"} LINK
+        / /.nav-collapse
+    #hello
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.centered
+            %h1 ShGR
+            %h2 
+          / /col-lg-8
+        / /row
+      / /container
+    / /hello
+    #green
+      .container
+        .row
+          .col-lg-5.centered
+            %img{:alt => "", :src => "assets/img/iphone.png"}/
+          .col-lg-7.centered
+            %h3 WHAT WE CAN DO?
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    .container
+      .row.centered.mt.grid
+        %h3 OUR LATEST WORK
+        .mt
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/01.jpg"}/
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/02.jpg"}/
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/03.jpg"}/
+      .row.centered.mt.grid
+        .mt
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/04.jpg"}/
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/05.jpg"}/
+        .col-lg-4
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/img/06.jpg"}/
+      .row.mt.centered
+        .col-lg-7.col-lg-offset-1.mt
+          %p.lead Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.
+        .col-lg-3.mt
+          %p
+            %button.btn.btn-theme.btn-lg{:type => "button"} Email Me!
+    #skills
+      .container
+        .row.centered
+          %h3 OUR SKILLS
+          .col-lg-3.mt
+            %canvas#javascript{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Javascript
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 70,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 30,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+          .col-lg-3.mt
+            %canvas#bootstrap{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Bootstrap
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 90,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 10,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
+          .col-lg-3.mt
+            %canvas#wordpress{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Wordpress
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 65,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 35,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
+          .col-lg-3.mt
+            %canvas#photoshop{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Photoshop
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 50,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 50,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
+        / /row
+      / /container
+    / /skills
+    %section#contact
+    #social
+      .container
+        .row.centered
+          .col-lg-8.col-lg-offset-2
+            .col-md-3
+              %a{:href => "#"}
+                %i.fa.fa-facebook
+            .col-md-3
+              %a{:href => "#"}
+                %i.fa.fa-dribbble
+            .col-md-3
+              %a{:href => "#"}
+                %i.fa.fa-twitter
+            .col-md-3
+              %a{:href => "#"}
+                %i.fa.fa-envelope
+      / /container
+    / /social
+    #f
+      .container
+        .row
+          %p
+            Crafted with
+            %i.fa.fa-heart
+            by BlackTie.co.
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:src => "assets/js/bootstrap.js"}
