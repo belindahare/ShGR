@@ -1,0 +1,55 @@
+img.homephotomain{
+  width: 100%;
+}
+.container.main_photo{
+  background-color: white;
+}
+h1.home_page{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 12px;
+}
+}
+/*div #hello{
+  padding-top:0px;
+  padding-bottom: 15%;
+}*/
+.col-lg-12.col-xs-12.photomain{
+  background-color: white;
+}
+img.produce_photo{
+  padding-bottom: 12%;
+}
+.col-lg-12.col-xs-12.homephoto{
+  max-height: 75%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 31%;
+  background-image: url("/assets/hungry_child.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%
+}
+.row.centered.mt.grid.volunteers{
+  margin-top: 0px;
+}
+button.btn.btn-theme.btn-lg{
+
+}
+a.login{
+  /*margin-right: 3%;*/
+  padding: 0px;
+}
+a.signup{
+  margin-left: 5%;
+}
+
+/*.row.main{
+  height: 430px;
+  background-image: url("/assets/hungry_child.jpg");
+  background-repeat: no-repeat;
+
+}*/
+/*div.homephotomain{
+  background-image: url("/assets/hungry_child.jpg");
+  background-repeat: no-repeat;
+}*/
