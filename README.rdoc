@@ -26,3 +26,6 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+initial planning folder contains the requirements and time estimate, along with two basic grid layouts for ShGR
