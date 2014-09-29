@@ -33,15 +33,17 @@
           %a.navbar-brand{:href => "#"}
           %i.fa.fa-bolt
         .navbar-collapse.collapse
+          %p.notice= notice
+          %p.alert= alert
           %ul.nav.navbar-nav.navbar-right
             %li.active.login
-              %a.login{:href => "#"} Login
-            %li.active.signup
-              %a{:href => "#"} Sign Up
+              = login_links
+            / %li.active.signup
+            /   %a{href: new_user_registration_path} Sign Up
         / /.nav-collapse
     #hello
       .container.main
-      .col-lg-8.col-lg-offset-2.centered
+      .col-lg-8.centered
         %h1.home_page ShGR
       .col-lg-12.col-xs-12.homephoto
         %div.homephotomain

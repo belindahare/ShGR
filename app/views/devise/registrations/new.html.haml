@@ -1,0 +1,68 @@
+
+%h2.signup.centered Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .col-lg-12-col-xs-12.signup
+    .col-lg-6.col-xs-6.signup1
+      %div.name
+        = f.label :full_name, "Name"
+        %br
+        = f.text_field :full_name, autofocus: true
+      %div.organization_name
+        = f.label :organization_name, "Organization (if applicable)"
+        %br
+        = f.text_field :organization_name, autofocus: true
+      %div.phone_number
+        = f.label :phone_number, "Phone Number"
+        %br
+        = f.text_field :phone_number, autofocus: true
+      %div.address
+        = f.label :address
+        %br
+        = f.text_field :address, autofocus: true
+      %div.city
+        = f.label :city
+        %br
+        = f.text_field :city, autofocus: true
+      %div.state
+        = f.label :state
+        %br
+        = f.text_field :state, autofocus: true
+      %div.zip
+        = f.label :zip, "Zip Code"
+        %br
+        = f.text_field :zip, autofocus: true
+      %br
+    .col-lg-6.col-xs-6.signup2
+      %div.email
+        %br
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true
+      %div.password
+        = f.label :password
+        - if @validatable
+          %i
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      %div
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+        %br
+        = f.label :roles
+        %br/
+      - for role in User::ROLES
+        = check_box_tag "user[roles][]", role, @user.roles.include?(role)
+        = h role.humanize
+        %br/
+        = hidden_field_tag "user[roles][]", ""
+        %br
+        %br
+      %div 
+        = f.submit "Sign up" 
+        = render "devise/shared/links"
+      %br
+      %br
+      %br
