@@ -5,15 +5,17 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       user ||= User.new # guest user (not logged in)
+      alias_action :create, :read, :update, :destroy, to: :crud
       if user.admin?
         can :manage, :all
       else
         can :read, :all
       end
-      # if user.role?(:supporter)
-      #   can :create, Article
-      #   can :update, Article do |article|
-      #     article.try(:user) == user
+      if user.role?(:supporter)
+        can :read, :List
+        can :read, :Grocers
+      if user.role?(:volunteer_organization)
+        can :crud, :List
     
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

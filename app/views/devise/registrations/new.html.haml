@@ -3,19 +3,12 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
   .col-lg-12-col-xs-12.signup
-    .col-lg-6.col-xs-6.signup1
+
+    .col-xs-6.col-lg-offset-3.col-lg-2
       %div.name
         = f.label :full_name, "Name"
         %br
         = f.text_field :full_name, autofocus: true
-      %div.organization_name
-        = f.label :organization_name, "Organization (if applicable)"
-        %br
-        = f.text_field :organization_name, autofocus: true
-      %div.phone_number
-        = f.label :phone_number, "Phone Number"
-        %br
-        = f.text_field :phone_number, autofocus: true
       %div.address
         = f.label :address
         %br
@@ -33,9 +26,16 @@
         %br
         = f.text_field :zip, autofocus: true
       %br
-    .col-lg-6.col-xs-6.signup2
-      %div.email
+    .col-xs-6.col-lg-offset-1.col-lg-4
+      %div.organization_name
+        = f.label :organization_name, "Organization (if applicable)"
         %br
+        = f.text_field :organization_name, autofocus: true
+      %div.phone_number
+        = f.label :phone_number, "Phone Number"
+        %br
+        = f.text_field :phone_number, autofocus: true
+      %div.email
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true
@@ -51,15 +51,17 @@
         %br/
         = f.password_field :password_confirmation, autocomplete: "off"
         %br
-        = f.label :roles
-        %br/
-      - for role in User::ROLES
-        = check_box_tag "user[roles][]", role, @user.roles.include?(role)
-        = h role.humanize
-        %br/
-        = hidden_field_tag "user[roles][]", ""
         %br
+      %div.roles
+        = f.label :roles, "Are you a Supporter or Volunteer Organization?"
         %br
+        - for role in User::ROLES
+          = check_box_tag "user[roles][]", Role, @user.roles.include?(role)
+          = h role.humanize
+          %br/
+          = hidden_field_tag "user[roles][]", ""
+          %br
+          %br
       %div 
         = f.submit "Sign up" 
         = render "devise/shared/links"

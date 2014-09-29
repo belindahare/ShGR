@@ -1,0 +1,5 @@
+%h2.centered
+  Participating Grocers
+%ul
+  - @grocers.each do |grocer|
+    = link_to "#{grocer.name}", supporter_grocer_path

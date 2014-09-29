@@ -67,7 +67,9 @@ h2.signup.centered{
   padding-left: 5%;
 
 }
-
+div.login_form{
+  background-color: #74cfae;
+}
 
 .navbar-default .navbar-nav>.active>a{
   display: inline-block;

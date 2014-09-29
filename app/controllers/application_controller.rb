@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit({ roles: [] }, :full_name, :organization_name, :phone_number, :address, :city, :state, :zip, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit({ roles: [] }, :full_name, :organization_name, :phone_number, :address, :city, :state, :zip, :email, :password, :password_confirmation) }
   end
+    def after_sign_in_path_for(resource)
+      if @user.roles_mask == "2"
+        supporter_grocers_path
+      else
+        "error"
+      end
+    end
+
 
 
 end
