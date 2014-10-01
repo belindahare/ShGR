@@ -1,20 +1,17 @@
 class User < ActiveRecord::Base
+  has_many :lists, through: :grocers
+  belongs_to :grocers
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  # named_scope :with_role, lambda { |role| {:conditions => "roles_mask & #{2**ROLES.index(role.to_s)} > 0"} }
+
+  validates_presence_of :email
+  validates_uniqueness_of :email, :case_sensitive => false
+
   
-  
-  ROLES = %w[admin supporter volunteer_organization]
-  
-  def roles=(roles)
-    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
-  end
-  
-  def roles
-    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
-  end
+  # ROLES = %w[admin supporter volunteer_organization]
   
   def role?(role)
     roles.include? role.to_s

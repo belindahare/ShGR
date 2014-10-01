@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :supporters do
-    resources :grocers do
+  resources :grocers do
+    resources :supporters do
       resources :volunteer_organizations do 
       end
     end

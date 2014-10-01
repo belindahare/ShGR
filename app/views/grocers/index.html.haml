@@ -1,5 +1,28 @@
-%h2.centered
-  Participating Grocers
-%ul
-  - @grocers.each do |grocer|
-    = link_to "#{grocer.name}", supporter_grocer_path
+%br
+#hello
+  .container.main.stores
+    .col-xl-8.centered
+      %h1.grocery_stores 
+        Partner Stores
+    .col-lg-12.col-xs-12.storephoto
+      %br
+      %br
+  .col-lg-12-col-xs-12.signup
+    .col-xs-6.col-lg-offset-1.col-lg-2.stores_list
+      - @grocers.each do |grocer|
+        %br
+        = "#{grocer.name}"
+        %br
+        = "#{grocer.address}"
+        %br
+        = "#{grocer.city}"
+        = "#{grocer.state}"
+        = "#{grocer.zip}"
+        %br
+
+        .button.btn.btn-theme1.btn-lg.my_store My Store
+        %br
+        %br
+        / 3 columns of stores that refine to a single column on a phone.
+
+

@@ -43,8 +43,11 @@
         / /.nav-collapse
     #hello
       .container.main
-      .col-lg-8.centered
+      .col-xl-8.centered
         %h1.home_page ShGR
+      .col-xs-8.centered
+        %h1.small_screen_header
+          ShGR
       .col-lg-12.col-xs-12.homephoto
         %div.homephotomain
 
@@ -101,58 +104,26 @@
     #skills
       .container
         .row.centered
-          %h3 OUR SKILLS
+          %h3 HOW TO MAKE A DIFFERENCE IN YOUR COMMUNITY
           .col-lg-3.mt
             %canvas#javascript{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
-            %p Javascript
+            %p Sign up today as a supporter on ShGR.  It only takes a minute and it's the most "difficult" step, promise! 
             %br/
             :javascript
               var doughnutData = [
                   {
-                    value: 70,
+                    value: 25,
                     color:"#74cfae"
                   },
                   {
-                    value : 30,
+                    value : 75,
                     color : "#3c3c3c"
                   }
                 ];
                 var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
           .col-lg-3.mt
             %canvas#bootstrap{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
-            %p Bootstrap
-            %br/
-            :javascript
-              var doughnutData = [
-                  {
-                    value: 90,
-                    color:"#74cfae"
-                  },
-                  {
-                    value : 10,
-                    color : "#3c3c3c"
-                  }
-                ];
-                var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
-          .col-lg-3.mt
-            %canvas#wordpress{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
-            %p Wordpress
-            %br/
-            :javascript
-              var doughnutData = [
-                  {
-                    value: 65,
-                    color:"#74cfae"
-                  },
-                  {
-                    value : 35,
-                    color : "#3c3c3c"
-                  }
-                ];
-                var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
-          .col-lg-3.mt
-            %canvas#photoshop{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
-            %p Photoshop
+            %p Next time you go grocery shopping, purchase one item from your assigned organization's list- tell your cashier that this item is for ShGR so it can be held aside for pickup.
             %br/
             :javascript
               var doughnutData = [
@@ -162,6 +133,38 @@
                   },
                   {
                     value : 50,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
+          .col-lg-3.mt
+            %canvas#wordpress{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Tell your friends, family, and co-workers so that they can participate in this amazing community service!
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 75,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 25,
+                    color : "#3c3c3c"
+                  }
+                ];
+                var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
+          .col-lg-3.mt
+            %canvas#photoshop{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
+            %p Repeat!  Please know that people in your local community are in desperate need of these small donations- You can make a real difference in their lives by using ShGR every time you make a trip to the store! 
+            %br/
+            :javascript
+              var doughnutData = [
+                  {
+                    value: 100,
+                    color:"#74cfae"
+                  },
+                  {
+                    value : 0,
                     color : "#3c3c3c"
                   }
                 ];
@@ -195,6 +198,7 @@
             Crafted with
             %i.fa.fa-heart
             by BlackTie.co.
+
     /
       Bootstrap core JavaScript
       \==================================================

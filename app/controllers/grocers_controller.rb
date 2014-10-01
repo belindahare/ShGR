@@ -1,5 +1,5 @@
 class GrocersController < ApplicationController
-  before_action :find_grocer only: [:show, :edit, :update, :destroy]
+  before_action :find_grocer, only: [:show, :edit, :update, :destroy]
   def index
     @grocers = Grocer.all
   end
@@ -12,6 +12,7 @@ class GrocersController < ApplicationController
   end
   def create
     @grocer = grocer.create grocer_params
+  end
 
 
   def edit
@@ -20,6 +21,7 @@ class GrocersController < ApplicationController
   private
   def grocer_params
     params.require(:grocer).permit(:name, :address, :city, :state, :zip, :phone_number)
+  end
   def find_grocer
     @grocer = Grocer.find params[:id]
   end

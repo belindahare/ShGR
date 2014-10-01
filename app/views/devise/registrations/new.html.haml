@@ -55,16 +55,22 @@
       %div.roles
         = f.label :roles, "Are you a Supporter or Volunteer Organization?"
         %br
-        - for role in User::ROLES
-          = check_box_tag "user[roles][]", Role, @user.roles.include?(role)
-          = h role.humanize
-          %br/
-          = hidden_field_tag "user[roles][]", ""
-          %br
-          %br
+      %div.role1
+        = f.radio_button :role, "admin"
+        = f.label :role, "Admin"
+        %br
+      %div.role2
+        = f.radio_button :role, "supporter"
+        = f.label :role, "Supporter"
+        %br
+      %div.role3
+        = f.radio_button :role, "volunteer_organization"
+        = f.label :role, "Volunteer Organization"
+        %br
+        %br
       %div 
         = f.submit "Sign up" 
         = render "devise/shared/links"
-      %br
-      %br
-      %br
+        %br
+        %br
+        %br

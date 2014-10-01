@@ -1,0 +1,31 @@
+
+= form_for @grocer do |f|
+  - if f.object.errors.messages.length > 0
+    - f.object.errors.messages.inspect
+    %br/
+    - f.object.errors.messages.each do |key, value|
+      - value.each do |message|
+        = key.capitalize
+        = message
+    %br/
+    %br/
+    = f.label :name
+    = f.text_field :name
+    %br/
+    = f.label :address 
+    = f.text_field :address
+    %br/
+    = f.label :city
+    = f.text_field :city
+    %br/
+    = f.label :state
+    = f.text_field :state
+    %br/
+    = f.label :zip
+    = f.text_field :zip
+    %br
+    %br/
+    = f.submit, "Add Grocer"
+    %br
+    %br
+    = link_to "Back", root_path
