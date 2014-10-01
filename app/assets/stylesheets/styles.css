@@ -9,7 +9,14 @@ h1.home_page{
   padding-bottom: 0px;
   font-size: 12px;
 }
-
+i.fa.fa-bolt{
+  font-size: 28px;
+  font-style: normal;
+}
+i.fa.fa-sgr{
+  font-size: 14px;
+  font-style: normal;
+}
 
 img.produce_photo{
   padding-bottom: 12%;
