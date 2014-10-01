@@ -9,20 +9,31 @@
       %br
   .col-lg-12-col-xs-12.signup
     .col-xs-6.col-lg-offset-1.col-lg-2.stores_list
-      - @grocers.each do |grocer|
-        %br
-        = "#{grocer.name}"
-        %br
-        = "#{grocer.address}"
-        %br
-        = "#{grocer.city}"
-        = "#{grocer.state}"
-        = "#{grocer.zip}"
-        %br
+      .list_of_grocers
+        - @grocers.each do |grocer|
+          %br
+          = "#{grocer.name}"
+          %br
+          = "#{grocer.address}"
+          %br
+          = "#{grocer.city}"
+          = "#{grocer.state}"
+          = "#{grocer.zip}"
+          %br
 
-        .button.btn.btn-theme1.btn-lg.my_store My Store
-        %br
-        %br
-        / 3 columns of stores that refine to a single column on a phone.
+          .button.btn.btn-theme1.btn-lg.my_store My Store 
+          %br
+          %br
+        .add_new_grocer
+          / -if can? :create, @grocer 
+          = link_to "Add New Partner", new_grocer_path
+          %br
+          %br
+          %br
+        .map_of_stores
+          / -markers = '{@grocer.address}'
+          / = image_tag "http://maps.google.com/maps/api/staticmap?size=1000x1000&sensor=false&markers=#{@grocer.address}, #{@grocer.city}, #{@grocer.state}, #{@grocer.zip}}"
+
+    / 3 columns of stores that refine to a single column on a phone.
 
 

@@ -9,6 +9,7 @@ class GrocersController < ApplicationController
 
   def new
     @grocer = Grocer.new
+    
   end
   def create
     @grocer = grocer.create grocer_params

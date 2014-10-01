@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930190547) do
+ActiveRecord::Schema.define(version: 20141001155748) do
 
   create_table "grocers", force: true do |t|
     t.datetime "created_at"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140930190547) do
     t.string   "state"
     t.string   "zip"
     t.integer  "volunteer_organization_id"
+    t.float    "latitude",                  limit: 24
+    t.float    "longitude",                 limit: 24
   end
 
   create_table "lists", force: true do |t|
