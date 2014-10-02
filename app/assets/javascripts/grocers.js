@@ -10,7 +10,7 @@ $(document).on("click", '.grocers_search', function() {
     })
   })
 $(document).on("click", '.grocers_search', function() {
-    console.log "hi"
+    console.log "ajax on my store button"
   $.ajax({
       url: "/grocer_path",
       dataType: "script",
