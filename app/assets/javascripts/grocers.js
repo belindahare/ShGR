@@ -9,15 +9,7 @@ $(document).on("click", '.grocers_search', function() {
       data: {q: $('.grocer_search').val() }
     })
   })
-$(document).on("click", '.grocers_search', function() {
-    console.log "ajax on my store button"
-  $.ajax({
-      url: "/grocer_path",
-      dataType: "script",
-      type: "GET",
-      data: {q: $('.grocer_search').val() }
-    })
-  })
+
 
 })
 
