@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
-$(document).on("click", '.grocer_search', function() {
+$(document).on("click", '.grocers_search', function() {
     console.log($('.grocers_search').val())
   $.ajax({
-      url: "/grocers",
+      url: "/grocers_search",
       dataType: "script",
       type: "GET",
-      data: {q: $('.grocers_search').val()}
+      data: {q: $('.grocer_search').val() }
+    })
   })
 })

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
+root 'welcome#index'
+get '/grocers_search' => 'grocers#grocers_search'
   resources :grocers do
     resources :supporters do
       resources :volunteer_organizations do 
