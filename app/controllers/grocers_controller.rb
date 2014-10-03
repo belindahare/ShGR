@@ -10,7 +10,6 @@ class GrocersController < ApplicationController
 
   def new
     @grocer = Grocer.new
-    
   end
 
   def create
@@ -21,18 +20,20 @@ class GrocersController < ApplicationController
     @grocers = Grocer.where("zip LIKE ?", "%#{params[:q]}%")
     respond_to do |format|
       format.js
-
     end
   end
 
   def edit
   end
+  def update
+  end
 
   private
 
   def grocer_params
-    params.require(:grocer).permit(:name, :address, :city, :state, :zip, :phone_number)
+    params.require(:grocer).permit(:name, :address, :city, :state, :zip, :phone_number, :id, :volunteer_organization_id)
   end
+
   def find_grocer
     @grocer = Grocer.find params[:id]
   end

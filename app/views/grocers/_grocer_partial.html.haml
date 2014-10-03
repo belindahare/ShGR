@@ -10,4 +10,5 @@
   = grocer.zip
   %br
   %br
-  .button.btn.btn-theme1.btn-lg.my_store My Store 
+  / {store_id: @grocer}
+  / = link_to "My Store", grocer_path(@grocer), class: ".button.btn.btn-theme1.btn-lg.my_store", method: :put

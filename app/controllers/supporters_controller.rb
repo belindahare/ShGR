@@ -18,7 +18,7 @@ class SupportersController < ApplicationController
   private
 
     def supporter_params
-      params.require(:supporter).permit(:full_name, :address, :city, :state, :zip)
+      params.require(:supporter).permit(:full_name, :address, :city, :state, :zip, :grocer_id)
     end
 
     def find_supporter

@@ -10,6 +10,5 @@ $(document).on("click", '.grocers_search', function() {
     })
   })
 
-
 })
 

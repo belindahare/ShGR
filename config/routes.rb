@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 root 'welcome#index'
 get '/grocers_search' => 'grocers#grocers_search'
-get '/grocer_path' => 'grocer#show'
   resources :grocers do
     resources :supporters do
-      resources :volunteer_organizations do 
-      end
+    resources :volunteer_organizations do 
+    end
     end
   end
 
