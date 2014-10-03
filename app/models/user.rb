@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :lists, through: :grocers
+  # has_many :grocers
+  # has_many :lists, through: :grocers
   belongs_to :grocers
 
   # Include default devise modules. Others available are:

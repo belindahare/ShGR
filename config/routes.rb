@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 root 'welcome#index'
 get '/grocers_search' => 'grocers#grocers_search'
   resources :grocers do
-    resources :supporters do
     resources :volunteer_organizations do 
-    end
     end
   end
 

@@ -8,15 +8,23 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:role, :grocer_id, :full_name, :organization_name, :phone_number, :address, :city, :state, :zip, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:role, :grocer_id, :full_name, :organization_name, :phone_number, :address, :city, :state, :zip, :email, :password, :password_confirmation) }
   end
-  def after_sign_in_path_for(resource)
-    # if current_user.role == "supporter"
-    #   grocers_path
-    if current_user.role == "volunteer_organization"
-      grocer_supporter_volunteer_organization_path(@grocer, @volunteer_organization)
-    # elsif current_user.role == "admin"
-    #   grocers_path
+  def after_sign_up_path_for(resource)
+    if current_user.role == "supporter"
+      grocers_path
+    elsif current_user.role == "volunteer_organization"
+      grocer_supporter_volunteer_organization_path(@grocer, @supporter, @volunteer_organization)
+    elsif current_user.role == "admin"
+      grocers_path
     else
       "error"
     end
   end
+  def after_sign_in_path_for(resource)
+    if current_user.role == "supporter"
+      grocer_path(current_user.grocer_id)
+    elsif current_user.role == "volunteer_organization"
+      grocer_path(current_user.grocer_id)
+    end
+  end
+
 end

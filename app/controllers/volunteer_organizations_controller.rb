@@ -15,8 +15,12 @@ class VolunteerOrganizationsController < ApplicationController
   end
 
   private
+    def need_params
+      params.require(:need).permit(:item, :description, :quantity, :volunteer_organization_id)
     def volunteer_organization_params
-        parms.require(:volunteer_organization).permit(:name, :address, :city, :state, :zip, :phone, :grocer_id)
+      params.require(:volunteer_organization).permit(:name, :address, :city, :state, :zip, :phone, :grocer_id)
+    end
     def find_volunteer_organization
-      @volunteer_organization = VolunteerOrganization.find parmas[:id]
+      @volunteer_organization = VolunteerOrganization.find params[:id]
+    end
 end

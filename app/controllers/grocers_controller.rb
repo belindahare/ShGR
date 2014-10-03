@@ -6,6 +6,8 @@ class GrocersController < ApplicationController
   end
 
   def show
+    @need = @grocer.needs.new
+
   end
 
   def new
@@ -26,12 +28,16 @@ class GrocersController < ApplicationController
   def edit
   end
   def update
+    @user = current_user
+    @user.grocer_id = @grocer.id
+    @user.save
+    redirect_to grocer_path(@grocer)
   end
 
   private
 
   def grocer_params
-    params.require(:grocer).permit(:name, :address, :city, :state, :zip, :phone_number, :id, :volunteer_organization_id)
+    params.require(:grocer).permit(:name, :address, :city, :state, :zip)
   end
 
   def find_grocer
