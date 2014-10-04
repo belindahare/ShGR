@@ -4,10 +4,8 @@ class GrocersController < ApplicationController
   def index
     @grocers = Grocer.all
   end
-
   def show
-    @need = @grocer.needs.new
-
+    @needs = @grocer.volunteer_organization.needs
   end
 
   def new

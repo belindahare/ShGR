@@ -5,7 +5,9 @@ class VolunteerOrganizationsController < ApplicationController
   def create 
   end
   def show
-    @volunteer_organization = current_user.grocer
+    # @volunteer_organization = current_user.grocer
+    @volunteer_organization = @grocer.volunteer_organization
+    @need = @volunteer_organization.need
   end
 
   def new
