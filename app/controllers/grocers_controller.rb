@@ -5,7 +5,7 @@ class GrocersController < ApplicationController
     @grocers = Grocer.all
   end
   def show
-    @needs = @grocer.volunteer_organization.needs
+    # @needs = @grocer.volunteer_organization.needs
   end
 
   def new
@@ -35,7 +35,7 @@ class GrocersController < ApplicationController
   private
 
   def grocer_params
-    params.require(:grocer).permit(:name, :address, :city, :state, :zip)
+    params.require(:grocer).permit(:name, :address, :city, :state, :zip, :need_ids [], :volunteer_organization_id)
   end
 
   def find_grocer
