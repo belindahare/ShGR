@@ -2,21 +2,26 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-      user ||= User.new # guest user (not logged in)
-      alias_action :create, :read, :update, :destroy, to: :crud
-      if user.admin?
-        can :manage, :all
-      else
-        can :read, :all
-      end
-      if user.role?(:supporter)
-        can :read, :List
-        can :read, :Grocers
-      if user.role?(:volunteer_organization)
-        can :crud, :List
-      end
-
-
+    user ||= User.new # guest user (not logged in)
+    alias_action :create, :read, :update, :destroy, to: :crud
+    if user.role == "admin"
+      can :manage, :all
+      can :create, Grocer
+    end
+    if user.role == "supporter"
+      can :read, Need
+      can :update, Need
+      can :read, Grocer
+    else
+      can :read, :all
+    end
+    if user.role == "volunteer_organization"
+      can :manage, Need
+      can :read, Need
+      can :read, Grocer
+    else
+      can :read, :all
+    end
   end
     
     # The first argument to `can` is the action you are giving the user 
@@ -36,5 +41,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
+
 end

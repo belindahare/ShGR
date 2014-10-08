@@ -1,0 +1,17 @@
+/ = form_for @volunteer_organization do |f|
+/   %br/
+/   %br/
+/   = f.label :item
+/   = f.text_field :item
+/   %br/
+/   = f.label :quantity 
+/   = f.text_field :quantity
+/   %br/
+/   = f.label :description
+/   = f.text_field :description
+/   %br
+/   %br/
+/   = f.submit
+/   %br
+/   %br
+/   = link_to "Back", root_path

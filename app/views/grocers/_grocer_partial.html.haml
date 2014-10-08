@@ -1,4 +1,4 @@
-%li
+%br
   = grocer.name
   %br
   = grocer.address
@@ -8,6 +8,5 @@
   = grocer.state
   %br
   = grocer.zip
+  = button_to "My Store", grocer_path(grocer), class: "button.btn.btn-theme1.btn-lg.my_store", method: :put
   %br
-  %br
-  = link_to "My Store", grocer_path(grocer), class: ".button.btn.btn-theme1.btn-lg.my_store", method: :put

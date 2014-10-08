@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     if current_user.role == "supporter"
       grocers_path
     elsif current_user.role == "volunteer_organization"
-      grocer_volunteer_organization_path()
+      grocers_path
     elsif current_user.role == "admin"
       grocers_path
     else
@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
   end
   def after_sign_in_path_for(resource)
     if current_user.role == "supporter"
-      grocer_volunteer_organization_path(current_user.grocer_id.volunteer_organization_id)
+      grocers_path
     elsif current_user.role == "volunteer_organization"
-      grocer_volunteer_organization_path(current_user.grocer_id.volunteer_organization_id)
+      grocer_path(current_user.grocer_id)
     end
   end
 

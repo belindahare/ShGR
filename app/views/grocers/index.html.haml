@@ -12,6 +12,7 @@
       %br
       %br
       =text_field_tag "","", class: "grocer_search" 
+      %br
       =link_to "Store Search", 'javascript:void(0)', class: "grocers_search btn btn-lg btn-success"
       %ul.search_list
       .list_of_grocers
@@ -20,8 +21,8 @@
         %br
         %br
       .add_new_grocer
-        / -if can? :create, @grocer 
-        = link_to "Add New Partner", new_grocer_path
+        -if can? :create, Grocer 
+          = link_to "Add New Partner", new_grocer_path
         %br
         %br
         %br

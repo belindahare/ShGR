@@ -5,8 +5,10 @@ class GrocersController < ApplicationController
     @grocers = Grocer.all
   end
   def show
-    # @needs = @grocer.volunteer_organization.needs
+    @need = @grocer.needs.new
+    @needs = @grocer.needs
   end
+
 
   def new
     @grocer = Grocer.new
@@ -32,12 +34,18 @@ class GrocersController < ApplicationController
     redirect_to grocer_path(@grocer)
   end
 
+  # def create_need
+  #   @grocer = Grocer.find params[:grocer_id]
+  #   @need = @grocer.needs.create need_params
+  #   redirect_to grocer_path(current_user.grocer_id)
+  # end
+
   private
 
   def grocer_params
-    params.require(:grocer).permit(:name, :address, :city, :state, :zip, :need_ids [], :volunteer_organization_id)
+    params.require(:grocer).permit(:name, :address, :city, :state, :zip)
   end
-
+ 
   def find_grocer
     @grocer = Grocer.find params[:id]
   end

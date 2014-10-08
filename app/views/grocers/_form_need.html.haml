@@ -1,0 +1,9 @@
+= form_for [@grocer, @need] do |f|
+  %br/
+  = f.label :item
+  = f.text_field :item
+  = f.label :description 
+  = f.text_field :description
+  = f.label :quantity
+  = f.text_field :quantity  
+  = f.submit

@@ -1,14 +1,27 @@
 %br
 %h1.centered
-  #{@grocer.name}
-.col-lg-12-col-xs-12.signup
-  .col-xs-6.col-lg-offset-3.col-lg-2
-    / = need_list, no longer using this because I want to redirect the user to the organization their store is connected to.  I will be creating a needs form to be displayed on the volunteer_organization page.
-    / %div.name
-    /   #{@grocer.address}
-    /   %br
-    /   #{@grocer.city}
-    /   %br
-    /   #{@grocer.state}
-    /   %br
-    /   #{@grocer.zip} 
+  Local Needs
+%br
+  .col-xs-12.col-lg-12.photo
+  %br
+  %br
+.col-xs-12.col-lg-12.signup1
+  / .col-xs-6.col-md-4.col-lg-12
+  /   %br  
+  /   -if can? :crud, @need
+  /     = render 'form_need'
+  /   %br
+  /   %br
+  .row.collapse
+  - @grocer.needs.each do |need|
+    .col-xs-6.col-lg-4
+      %ul.need_info
+        %h3.centered
+          = "#{need.item}"
+          %div#number
+            %span.quantity
+              = "#{need.quantity}"
+            %br
+            =link_to "Donate", 'javascript:void(0)', class: "quantity_decrease btn btn-lg btn-success"
+
+
