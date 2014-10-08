@@ -6,22 +6,25 @@
   %br
   %br
 .col-xs-12.col-lg-12.signup1
-  / .col-xs-6.col-md-4.col-lg-12
-  /   %br  
-  /   -if can? :crud, @need
-  /     = render 'form_need'
-  /   %br
-  /   %br
+  .col-xs-7.col-md-4.col-lg-12
+    %br  
+    -if can? :crud, @need
+      = render 'form_need'
+    %br
+    %br
   .row.collapse
   - @grocer.needs.each do |need|
     .col-xs-6.col-lg-4
-      %ul.need_info
-        %h3.centered
-          = "#{need.item}"
-          %div#number
-            %span.quantity
-              = "#{need.quantity}"
-            %br
-            =link_to "Donate", 'javascript:void(0)', class: "quantity_decrease btn btn-lg btn-success"
+      %h3.centered
+        / = need_list
+        = "#{need.item}"
+        %div#number
+          %span.quantity
+            = "#{need.quantity}"
+            / = quantity_decrease
+          %br
+          %br
+        = link_to "Donate", 'javascript:void(0)', class: "quantity_decrease btn btn-lg btn-success"
+
 
 

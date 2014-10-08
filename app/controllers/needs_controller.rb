@@ -38,11 +38,14 @@ class NeedsController < ApplicationController
     redirect_to grocer_path(current_user.grocer_id)
   end
 
-  def donate
+  def quantity_decrease
     @grocer = Grocer.find params[:grocer_id]
-        # redirect_to hospital_patient_path(@hospital, @patient)
+    @need = Need.find params[:need_id]
     respond_to do |format|
       format.js
+    if @need.quantity.save
+        render :partial => 'quantity'
+    end
     end
   end
 

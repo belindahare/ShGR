@@ -10,13 +10,21 @@ $(document).on("click", '.grocers_search', function() {
     })
   })
 $(document).on("click", '.quantity_decrease', function() {
-   
-  $.ajax({
-      url: "/",
+  console.log("start");
+  $(function() {
+    $("#quantity").keyup(function() {
+        var q = $("#quantity").val();
+        var x = $("1").val();
+        $("#new_quantity").val(q - x);
+$.ajax({
+      url: $(this).attr("need_path"),
       dataType: "script",
       type: "GET",
-      data: {q: $('.quantity').val() }
     })
   })
+    });
+});
+  
 })
+
 
