@@ -28,9 +28,22 @@ class GrocersController < ApplicationController
   def edit
   end
   def update
+    @need = Need.find params[:id]
     @user = current_user
     @user.grocer_id = @grocer.id
     @user.save
+    # puts "*"*400
+    
+    # @need.quantity -= 1
+    # puts "*"*200 
+
+    # @need.quantity.to_s.save
+    # puts "*"*200 
+
+    # respond_to do |format|
+    #   format.js
+    #   puts "*"*200 
+
     redirect_to grocer_path(@grocer)
   end
 

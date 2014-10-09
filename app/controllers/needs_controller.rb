@@ -46,15 +46,22 @@ class NeedsController < ApplicationController
     # if @need.quantity.save
     #     render :partial => 'quantity_partial'
     end
-    end
   end
   def need_quantity_minus_one
+    @need =Need.find params[:id]
+    puts "*"*100
     @need.quantity -= 1
+    puts "*"*100 
+
+    @need.save
+    puts "*"*200 
+
     respond_to do |format|
       format.js
-    if @need.quantity.save
-      render :partial => "quantity_partial"
+      render :partial => 'quantity_partial'
+      puts "*"*3
     end
+
   end
 
 private

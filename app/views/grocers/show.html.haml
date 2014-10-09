@@ -16,7 +16,6 @@
   - if need.item
     .col-xs-6.col-lg-4
       %h3.centered
-        / = need_list
         = need.item
         %div#number
           %span.quantity
@@ -24,7 +23,7 @@
             %ul.current_quantity
           %br
           %br
-        = link_to "Donate", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", need_path: need_quantity_minus_one_grocer_need_path(@grocer, need)
+        = link_to "Donate", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", belindas_awesome_route_of_doom: need_quantity_minus_one_grocer_need_path(@grocer, need)
 
    
   / A controller action specific to decreasing the value of the need
