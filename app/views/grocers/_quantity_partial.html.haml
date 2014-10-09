@@ -1,8 +1,6 @@
 #{@need.quantity}
   %div.quantity
-    / - if @need.quantity == " "
-    /   = "#{need.quantity}".to_float - 1
     -if @need.quantity == "0"
       = "Goal Has Been Met!"
-      - if can? destroy: Need
-        = link_to grocer_need_path, method: :delete
+      / - if can? destroy: Need
+      /   = link_to grocer_need_path, method: :delete

@@ -1,4 +1,4 @@
-$("ul.quantity_decrease").html("")
+$("ul.current_quantity").html("")
 <% @needs.each do |need| %>
-  $("ul.quantity_decrease").append("<%= escape_javascript(render('grocers/quantity_partial', need: need)) %>")
+  $("ul.current_quantity").append("<%= escape_javascript(render('grocers/quantity_partial', grocer: grocer)) %>")
 <% end %>

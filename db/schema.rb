@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006133925) do
+ActiveRecord::Schema.define(version: 20141008175743) do
 
   create_table "grocer_volunteerorganizations", force: true do |t|
     t.integer  "grocer_id"
@@ -34,13 +34,10 @@ ActiveRecord::Schema.define(version: 20141006133925) do
   end
 
   create_table "needs", force: true do |t|
-    t.string   "item"
-    t.string   "description"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "volunteer_organization_id"
-    t.integer  "grocer_id"
+    t.integer "grocer_id"
+    t.string  "item"
+    t.integer "quantity"
+    t.integer "volunteer_organization_id"
   end
 
   create_table "roles", force: true do |t|
@@ -75,7 +72,6 @@ ActiveRecord::Schema.define(version: 20141006133925) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
-    t.integer  "roles_mask"
     t.integer  "grocer_id"
   end
 

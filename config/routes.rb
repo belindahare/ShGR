@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 root 'welcome#index'
 get '/grocers_search' => 'grocers#grocers_search'
+# get '/quantity_partial' => 'grocers#quantity'
+patch '/quantity_partial' => 'needs#quantity'
 resources :grocers do
   resources :needs
 end

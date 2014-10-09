@@ -12,19 +12,18 @@ $(document).on("click", '.grocers_search', function() {
 $(document).on("click", '.quantity_decrease', function() {
   console.log("start");
   $(function() {
-    $("#quantity").keyup(function() {
-        var q = $("#quantity").val();
-        var x = $("1").val();
-        $("#new_quantity").val(q - x);
+        console.log("middle")
 $.ajax({
-      url: $(this).attr("need_path"),
+      url: "/quantity_partial",
       dataType: "script",
-      type: "GET",
+      type: "PATCH",
+      data: {need: {quantity: $(this).attr('need_quantity_decrease')}}
     })
+  console.log("end")
   })
     });
 });
   
-})
+
 
 

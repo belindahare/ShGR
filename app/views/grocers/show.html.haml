@@ -12,19 +12,21 @@
       = render 'form_need'
     %br
     %br
-  .row.collapse
-  - @grocer.needs.each do |need|
+- @grocer.needs.each do |need|
+  - if need.item
     .col-xs-6.col-lg-4
       %h3.centered
         / = need_list
-        = "#{need.item}"
+        = need.item
         %div#number
           %span.quantity
-            = "#{need.quantity}"
-            / = quantity_decrease
+            ul.current_quantity
           %br
           %br
-        = link_to "Donate", 'javascript:void(0)', class: "quantity_decrease btn btn-lg btn-success"
+        = link_to "Donate", 'javascript:void(0)', need_path: quantity_partial_path, need_quantity_decrease: need_quantity_minus_one(need), class: "quantity_decrease btn btn-lg btn-success"
+
+
+  / A controller action specific to decreasing the value of the need
 
 
 
