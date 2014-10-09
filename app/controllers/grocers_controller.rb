@@ -3,6 +3,7 @@ class GrocersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
   def index
     @grocers = Grocer.all
+
   end
   def show
     @need = @grocer.needs.new
@@ -32,40 +33,8 @@ class GrocersController < ApplicationController
     @user = current_user
     @user.grocer_id = @grocer.id
     @user.save
-    # puts "*"*400
-    
-    # @need.quantity -= 1
-    # puts "*"*200 
-
-    # @need.quantity.to_s.save
-    # puts "*"*200 
-
-    # respond_to do |format|
-    #   format.js
-    #   puts "*"*200 
-
     redirect_to grocer_path(@grocer)
   end
-
-# def quantity
-#     @grocer = Grocer.find params[:grocer_id]
-#     @need = Need.find params[:need_id]
-#     respond_to do |format|
-#       format.js
-#     if @need.quantity.save
-#         render :partial => 'quantity_partial'
-#     end
-#     end
-#   end
-#   def need_quantity_minus_one
-#     @need.quantity -= 1
-#     respond_to do |format|
-#       format.js
-#     if @need.quantity.save
-#       render :partial => 'quantity_partial'
-#     end
-#     end
-#   end
 
   private
 

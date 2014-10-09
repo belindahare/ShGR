@@ -18,9 +18,9 @@
       %h3.centered
         = need.item
         %div#number
-          %span.quantity
+          %span.quantity{class: "quantity_#{need.id}"}
             =need.quantity
-            %ul.current_quantity
+            / %ul.current_quantity
           %br
           %br
         = link_to "Donate", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", belindas_awesome_route_of_doom: need_quantity_minus_one_grocer_need_path(@grocer, need)
