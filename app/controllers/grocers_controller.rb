@@ -34,17 +34,25 @@ class GrocersController < ApplicationController
     redirect_to grocer_path(@grocer)
   end
 
-  # def quantity_decrease
-  #   @grocer = Grocer.find params[:grocer_id]
-  #   @need = Need.find params[:need_id]
-  #   respond_to do |format|
-  #     format.js
-  #   if @need.quantity.save
-  #       render :partial => 'quantity_partial'
-  #   end
-  #   end
-  # end
-
+# def quantity
+#     @grocer = Grocer.find params[:grocer_id]
+#     @need = Need.find params[:need_id]
+#     respond_to do |format|
+#       format.js
+#     if @need.quantity.save
+#         render :partial => 'quantity_partial'
+#     end
+#     end
+#   end
+#   def need_quantity_minus_one
+#     @need.quantity -= 1
+#     respond_to do |format|
+#       format.js
+#     if @need.quantity.save
+#       render :partial => 'quantity_partial'
+#     end
+#     end
+#   end
 
   private
 

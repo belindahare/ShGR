@@ -14,7 +14,7 @@ $(document).on("click", '.quantity_decrease', function() {
   $(function() {
         console.log("middle")
 $.ajax({
-      url: "/quantity_partial",
+      url: $(this).attr("need_quantity_minus_one_grocer_need_path"),
       dataType: "script",
       type: "PATCH",
       data: {need: {quantity: $(this).attr('need_quantity_decrease')}}

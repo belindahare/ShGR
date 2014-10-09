@@ -9,9 +9,13 @@ Rails.application.routes.draw do
 root 'welcome#index'
 get '/grocers_search' => 'grocers#grocers_search'
 # get '/quantity_partial' => 'grocers#quantity'
-patch '/quantity_partial' => 'needs#quantity'
+patch '/needs' => 'needs#quantity'
 resources :grocers do
-  resources :needs
+  resources :needs do
+    member do 
+      patch :need_quantity_minus_one
+    end
+  end
 end
 
   # Example of regular route:
