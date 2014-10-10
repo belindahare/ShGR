@@ -5,6 +5,16 @@
   .col-xs-12.col-lg-12.photo
   %br
   %br
+  -if cannot? :create, Need 
+          
+    %h3.centered
+      A charitable organization in your area is in need of the following items.   Please choose an item to donate, click the donate button, and leave the item with your cashier at checkout.
+      %br
+      Thank you! 
+  -if can? :create, Need
+    %h3.centered
+      ShGR is built to facilitate tangible giving, so we ask that your item requests are as specific as possible.  Please arrange to have the donated items picked up at your assigned grocer everyday.
+
 .col-xs-12.col-lg-12.signup1
   .col-xs-7.col-md-4.col-lg-12
     %br  
@@ -22,7 +32,9 @@
           %span.quantity{class: "quantity_#{need.id}"}
             =need.quantity
           %br
-        = link_to "Donate One!", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", belindas_awesome_route_of_doom: need_quantity_minus_one_grocer_need_path(@grocer, need)
+          %br
+        = link_to "Donate One!", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", quantity_route: need_quantity_minus_one_grocer_need_path(@grocer, need)
+        %br
 
    
 
