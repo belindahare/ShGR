@@ -1,6 +1,6 @@
 %br
 %h1.centered
-  Local Needs
+  What Does Your Community Need?
 %br
   .col-xs-12.col-lg-12.photo
   %br
@@ -12,6 +12,7 @@
       = render 'form_need'
     %br
     %br
+
 - @grocer.needs.each do |need|
   - if need.item
     .col-xs-6.col-lg-4
@@ -20,13 +21,11 @@
         %div#number
           %span.quantity{class: "quantity_#{need.id}"}
             =need.quantity
-            / %ul.current_quantity
           %br
-          %br
-        = link_to "Donate", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", belindas_awesome_route_of_doom: need_quantity_minus_one_grocer_need_path(@grocer, need)
+        = link_to "Donate One!", 'javascript:void(0)',  class: "quantity_decrease btn btn-lg btn-success", belindas_awesome_route_of_doom: need_quantity_minus_one_grocer_need_path(@grocer, need)
 
    
-  / A controller action specific to decreasing the value of the need
+
 
 
 

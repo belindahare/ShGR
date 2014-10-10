@@ -50,17 +50,11 @@ class NeedsController < ApplicationController
   def need_quantity_minus_one
     @needs = Need.all
     @need =Need.find params[:id]
-    puts "*"*100
     @need.quantity -= 1
-    puts "*"*100 
-
     @need.save
-    # flash[:notice] = "Thank you for your donation!"
-    puts "*"*200 
     respond_to do |format|
       format.js
     end
-
   end
 
 private

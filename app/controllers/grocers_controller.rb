@@ -16,7 +16,10 @@ class GrocersController < ApplicationController
   end
 
   def create
-    @grocer = grocer.create grocer_params
+    @grocer = Grocer.new grocer_params
+    if @grocer.save
+      redirect_to grocers_path
+    end
   end
 
   def grocers_search
@@ -29,7 +32,7 @@ class GrocersController < ApplicationController
   def edit
   end
   def update
-    @need = Need.find params[:id]
+    # @need = Need.find params[:id]
     @user = current_user
     @user.grocer_id = @grocer.id
     @user.save

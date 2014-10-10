@@ -73,38 +73,7 @@
             %p Pronounced "Sugar" - This is an app that promotes tangible giving by connecting the three major facets of the community- Supporters, Charitable Organizations, and Grocers.  With specific lists from local shelters, you can make a true difference in the lives of people in your community by purchasing just one extra item next time you go grocery shopping. 
 
           .col-lg-5.centered
-            %img.produce_photo{:alt => "", :src => "assets/produce_small.jpg"}/ 
-    .container
-      .row.centered.mt.grid
-        %h3 Partners
-        .mt
-        .col-lg-4
-        /   %a{:href => "#"}
-        /     %img{:alt => "", :src => "assets/img/01.jpg"}/
-        / .col-lg-4
-        /   %a{:href => "#"}
-        /     %img{:alt => "", :src => "assets/img/02.jpg"}/
-        / .col-lg-4
-        /   %a{:href => "#"}
-        /     %img{:alt => "", :src => "assets/img/03.jpg"}/
-      .row.centered.mt.grid.volunteers
-        .mt
-        .col-lg-4.volunteers
-          %a{:href => "#"}
-            %img{:alt => "", :src => "assets/volunteers_small.jpg"}/
-        .col-lg-4
-        /   %a{:href => "#"}
-        /     %img{:alt => "", :src => "assets/img/05.jpg"}/
-        / .col-lg-4
-        /   %a{:href => "#"}
-        /     %img{:alt => "", :src => "assets/img/06.jpg"}/
-
-        .col-lg-7.col-lg-offset-1.mt
-          %p.lead 
-            We know that every dollar counts when you're feeding the less fortunate, we'd like to free up your resources so they can be applied to your organization's other needs.  Our goal at ShGR is to help procure a steady stream of donations based on the list YOU provide within this site.
-        .col-lg-3.mt
-          %p
-            
+            %img.produce_photo{:alt => "", :src => "assets/produce_small.jpg"}/
     #skills
       .container
         .row.centered
@@ -172,36 +141,66 @@
                     color : "#3c3c3c"
                   }
                 ];
-                var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
+                var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData); 
+    .container
+      .row.centered.mt.grid
+        %h3 Partners
+        .mt
+        .col-lg-4
+        /   %a{:href => "#"}
+        /     %img{:alt => "", :src => "assets/img/01.jpg"}/
+        / .col-lg-4
+        /   %a{:href => "#"}
+        /     %img{:alt => "", :src => "assets/img/02.jpg"}/
+        / .col-lg-4
+        /   %a{:href => "#"}
+        /     %img{:alt => "", :src => "assets/img/03.jpg"}/
+      .row.centered.mt.grid.volunteers
+        .mt
+        .col-lg-4.volunteers
+          %a{:href => "#"}
+            %img{:alt => "", :src => "assets/volunteers_small.jpg"}/
+        .col-lg-4
+        /   %a{:href => "#"}
+        /     %img{:alt => "", :src => "assets/img/05.jpg"}/
+        / .col-lg-4
+        /   %a{:href => "#"}
+        /     %img{:alt => "", :src => "assets/img/06.jpg"}/
+
+        .col-lg-7.col-lg-offset-1.mt
+          %p.lead 
+            We know that every dollar counts when you're feeding the less fortunate, we'd like to free up your resources so they can be applied to your organization's other needs.  Our goal at ShGR is to help procure a steady stream of donations based on the list YOU provide within this site.
+        .col-lg-3.mt
+          %p
+            
+    
         / /row
       / /container
     / /skills
-    %section#contact
-    #social
-      .container
-        .row.centered
-          .col-lg-8.col-lg-offset-2
-            .col-md-3
-              %a{:href => "#"}
-                %i.fa.fa-facebook
-            .col-md-3
-              %a{:href => "#"}
-                %i.fa.fa-dribbble
-            .col-md-3
-              %a{:href => "#"}
-                %i.fa.fa-twitter
-            .col-md-3
-              %a{:href => "#"}
-                %i.fa.fa-envelope
-      / /container
+    / %section#contact
+    / #social
+    /   .container
+    /     .row.centered
+    /       .col-lg-8.col-lg-offset-2
+    /         .col-md-3
+    /           %a{:href => "#"}
+    /             %i.fa.fa-facebook
+    /         .col-md-3
+    /           %a{:href => "#"}
+    /             %i.fa.fa-dribbble
+    /         .col-md-3
+    /           %a{:href => "#"}
+    /             %i.fa.fa-twitter
+    /         .col-md-3
+    /           %a{:href => "#"}
+    /             %i.fa.fa-envelope
+    / /container
     / /social
     #f
       .container
         .row
           %p
-            Crafted with
-            %i.fa.fa-heart
-            by BlackTie.co.
+            © Belinda Hare
 
     /
       Bootstrap core JavaScript

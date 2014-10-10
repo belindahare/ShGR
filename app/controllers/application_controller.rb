@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
     end
   end
   def after_sign_in_path_for(resource)
+
     if current_user.role == "supporter"
+      grocers_path
+    elsif current_user.role == "admin"
       grocers_path
     elsif current_user.role == "volunteer_organization"
       grocers_path
