@@ -4,8 +4,8 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
+    %meta{:content => "test", :name => "description"}/
+    %meta{:content => "test", :name => "author"}/
     %title ShGR
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -70,7 +70,7 @@
         .row
           .col-lg-7.centered
             %h3 WHAT IS ShGR?
-            %p Pronounced "Sugar" - This is an app that promotes tangible giving by connecting the three major facets of the community- Supporters, Charitable Organizations, and Grocers.  With specific lists from local shelters, you can make a true difference in the lives of people in your community by purchasing just one extra item next time you go grocery shopping. 
+            %p Pronounced "Sugar" - This is an app that promotes tangible giving by connecting the three major facets of the community- Supporters, Charitable Organizations, and Grocers.  With specific lists from local shelters, you can make a true difference in the lives of people in your community by purchasing just one extra item next time you go grocery shopping.
 
           .col-lg-5.centered
             %img.produce_photo{:alt => "", :src => "assets/produce_small.jpg"}/
@@ -128,7 +128,8 @@
                 var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
           .col-lg-3.mt
             %canvas#photoshop{:height => "130", :style => "width: 130px; height: 130px;", :width => "130"}
-            %p Repeat!  Please know that people in your local community are in desperate need of these small donations- You can make a real difference in their lives by using ShGR every time you make a trip to the store! 
+            %p Repeat!  Please know that people in your local community are in desperate need of these small donations- You can make a real difference in their lives by using ShGR every time you make a trip to the store!
+            = social_share_button_tag("ShGR - Tangible Giving. Have you given to your community today?")
             %br/
             :javascript
               var doughnutData = [

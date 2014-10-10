@@ -15,4 +15,5 @@
 //= require bootstrap.js
 //= require chart.js
 //= require turbolinks
+//= require social-share-button
 //= require_tree .

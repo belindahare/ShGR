@@ -11,7 +11,25 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require social-share-button
  *= require_self
  *= require bootstrap.css
  *= require main.css
  */
+.social-share-button-facebook {
+ display: inline-block;
+ width: 64px;
+ height: 64px;
+ background: url("/assets/facebook.png") no-repeat;
+ margin-left: 10px;
+ margin-top: 10px;
+}
+
+.social-share-button-twitter {
+ display: inline-block;
+ width: 64px;
+ height: 64px;
+ background: url("/assets/twitter.png") no-repeat;
+ margin-right: 10px;
+ margin-top: 10px;
+}
