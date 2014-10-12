@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
     elsif current_user.role == "admin"
       grocers_path
     elsif current_user.role == "volunteer_organization"
-      grocer_path(current_user.grocer_id)
+      grocer_path
+      # (current_user.grocer_id)
       
     end
   end
