@@ -1,31 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To Run Locally:
+  clone repository
+  bundle install
+  rake db:create db:migrate
+  start server
+  
+  
+I created ShGR for my final project at The Iron Yard.  ShGR is an app to help promote and facilitate tangible giving (food donations) to local charitable organizations.
+It allow the user to sign up as either a supporter or an organization.  The supporters search for their regular grocery store, click "my store" to connect to it, and once redirected to that grocer's page, they are able to donate from the specific list on that page.
+The supporter is also able to share the ShGR app with their friends through twitter and facebook links on the home and grocer's page.
+The organizations are able to connect to a grocery store and create a list of needs that supporters are able to view.  All donations are logged in real time using ajax, as is the grocer's search function.
+First time using cancan.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
-initial planning folder contains the requirements and time estimate, along with two basic grid layouts for ShGR
+Technologies Used:
+Ruby on Rails
+Javascript
+JQuery
+Ajax
+Bootstrap
+HTML
+CSS
